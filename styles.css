@@ -18,6 +18,8 @@ body {
 img {
   max-width: 15rem;
   max-height: 15rem;
+  min-width: 15rem;
+  min-height: 15rem;
 }
 
 .question {

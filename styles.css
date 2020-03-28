@@ -1,3 +1,82 @@
-h1 {
-  color: red;
+body {
+  color: white;
+  background: black;
+}
+
+body {
+  padding: 30px;
+}
+
+.image-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+}
+
+img {
+  max-width: 15rem;
+  max-height: 15rem;
+}
+
+.question {
+  text-align: center;
+  font-size: 3rem;
+  width: 100%;
+}
+.progress {
+  margin-top: 3rem;
+  height: 30px;
+  width: 100%;
+  position: relative;
+  border: 1px solid black;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.progress .progress-inner {
+  width: 100%;
+  height: 100%;
+  transition: background 0.2s;
+  top: 0;
+  left: 0;
+}
+.progress .progress-inner.green {
+  background: green;
+}
+.progress .progress-inner.orange {
+  background: orange;
+}
+.progress .progress-inner.red {
+  background: red;
+}
+.timer {
+  font-weight: 700;
+  font-size: 5rem;
+  text-align: center;
+}
+.item {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+.item .timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+svg {
+  transform: rotate(-90deg);
+}
+.circle-animation {
+  stroke-dasharray: 440;
+  /* this value is the pixel circumference of the circle */
+  stroke-dashoffset: 440;
+  transition: stroke 0.2s;
+}
+canvas {
+  width: 160px;
+  height: 160px;
 }

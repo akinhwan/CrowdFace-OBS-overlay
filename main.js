@@ -44,7 +44,7 @@ function progressBar(percentage) {
 }
 
 function timer() {
-  $(".timer").html(
+  $(".timer > span").html(
     (Math.round(((indexPB * 1000) / 600 / 100) * 10) / 10).toFixed(2)
   );
 }

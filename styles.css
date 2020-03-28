@@ -1,6 +1,7 @@
 body {
   color: white;
   background: black;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
@@ -54,9 +55,12 @@ img {
   background: red;
 }
 .timer {
+  font-size: 3rem;
+  text-align: center;
+}
+.timer > span {
   font-weight: 700;
   font-size: 5rem;
-  text-align: center;
 }
 .item {
   position: relative;

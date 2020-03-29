@@ -22,8 +22,9 @@
     </h1> -->
 
     <div class="image-wrapper">
-      <div class="image-left" id="result"></div>
+      <!-- <div class="image-left" id="result"></div> -->
       <img src="http://localhost:5001/current" id="image" alt="" />
+      <!-- <img src="./img/haystack.png" id="image" alt="" /> -->
       <!-- <div class="image image-left"></div> -->
       <div class="image image-right"></div>
     </div>
@@ -77,13 +78,13 @@
         });
 
         setTimeout(function() {
-          const cropData = {
-            left: 906,
-            top: 100.6875,
-            width: 150,
-            height: 156
-          };
-          cropper.setCropBoxData(cropData);
+          // const cropData = {
+          //   left: 906,
+          //   top: 100.6875,
+          //   width: 150,
+          //   height: 156
+          // };
+          // cropper.setCropBoxData(cropData);
           result.innerHTML = "";
           result.appendChild(cropper.getCroppedCanvas());
         }, 1000);

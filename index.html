@@ -3,8 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <link rel="icon" type="image/png" href="./crowdface.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.min.css"
+    />
     <title>CrowdFace</title>
   </head>
   <body>
@@ -14,16 +22,69 @@
     </h1>
 
     <div class="image-wrapper">
-      <img src="./img/cyrus.jpg" alt="" />
-      <img src="./img/miley.jpg" alt="" />
+      <img src="./img/sample.png" id="image" alt="" />
+      <div class="image image-left"></div>
+      <div class="image image-right"></div>
     </div>
+
+    <p>
+      Data:
+      <span id="data"
+        >{"x":444.79998779296875,"y":239.46669006347656,"width":512,"height":253.8666534423828,"rotate":0,"scaleX":1,"scaleY":1}</span
+      >
+    </p>
+    <p>
+      Crop Box Data:
+      <span id="cropBoxData"
+        >{"left":124.79998779296875,"top":61.96669006347656,"width":512,"height":253.8666534423828}</span
+      >
+    </p>
     <!-- <h2>progress bar timer</h2> -->
     <div class="progress"><div class="progress-inner green"></div></div>
     <!-- <hr /> -->
     <!-- <h2>Number timer</h2> -->
     <div class="timer"><span></span> seconds left to Vote!</div>
 
+    <button onclick="restart()">Restart Timer</button>
+
+    <button type="button" id="button">Crop</button>
+
+    <div id="result"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="./main.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", function() {
+        var image = document.querySelector("#image");
+        var data = document.querySelector("#data");
+        var cropBoxData = document.querySelector("#cropBoxData");
+        var button = document.getElementById("button");
+        var result = document.getElementById("result");
+        var cropper = new Cropper(image, {
+          ready: function(event) {
+            // Zoom the image to its natural size
+            cropper.zoomTo(1);
+          },
+
+          crop: function(event) {
+            data.textContent = JSON.stringify(cropper.getData());
+            cropBoxData.textContent = JSON.stringify(cropper.getCropBoxData());
+          },
+
+          zoom: function(event) {
+            // Keep the image in its natural size
+            if (event.detail.oldRatio === 1) {
+              event.preventDefault();
+            }
+          }
+        });
+
+        button.onclick = function() {
+          result.innerHTML = "";
+          result.appendChild(cropper.getCroppedCanvas());
+        };
+      });
+    </script>
   </body>
 </html>

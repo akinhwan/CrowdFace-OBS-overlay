@@ -1,6 +1,6 @@
 console.clear();
 
-var speed = 60;
+var speed = 10;
 var indexPB = speed * 60; // 60 FPS
 var initialDash = 440;
 var currentDash = 600;
@@ -57,3 +57,10 @@ function svg() {
 function getPercentage(current, max) {
   return (current * 100) / (max * 60);
 }
+
+function restart() {
+  indexPB = speed * 60;
+  myFunction();
+}
+
+////////////////////////////////////////////

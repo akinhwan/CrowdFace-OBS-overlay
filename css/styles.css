@@ -8,6 +8,9 @@ body {
   padding: 30px;
 }
 
+#image {
+  /* width: 5rem; */
+}
 .image-wrapper {
   width: 100%;
   display: flex;
@@ -16,11 +19,20 @@ body {
   margin: auto;
 }
 
-img {
-  max-width: 15rem;
-  max-height: 15rem;
-  min-width: 15rem;
-  min-height: 15rem;
+.image {
+  width: 25rem;
+  height: 15rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.image-left {
+  background-image: url("../img/sample.png");
+}
+
+.image-right {
+  background-image: url("../img/cyrus.jpg");
 }
 
 .question {

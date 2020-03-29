@@ -16,19 +16,19 @@
     <title>CrowdFace</title>
   </head>
   <body>
-    <h1 class="question">
+    <!-- <h1 class="question">
       Does the person on the left match the one on the right?
-      <!-- Are these two pictures of the same person? -->
-    </h1>
+      Are these two pictures of the same person?
+    </h1> -->
 
     <div class="image-wrapper">
-      <div class="image-left" id="result">Result</div>
+      <div class="image-left" id="result"></div>
       <img src="./img/screenshot.png" id="image" alt="" />
       <!-- <div class="image image-left"></div> -->
       <div class="image image-right"></div>
     </div>
 
-    <p>
+    <!-- <p>
       Data:
       <span id="data">
         {"x":401,"y":347.6875,"width":90,"height":100,"rotate":0,"scaleX":1,"scaleY":1}
@@ -39,7 +39,7 @@
       <span id="cropBoxData">
         {"left":543,"top":347.6875,"width":90,"height":100}
       </span>
-    </p>
+    </p> -->
 
     <!-- <h2>progress bar timer</h2> -->
     <div class="progress"><div class="progress-inner green"></div></div>
@@ -47,9 +47,7 @@
     <!-- <h2>Number timer</h2> -->
     <div class="timer"><span></span> seconds left to Vote!</div>
 
-    <button onclick="restart()">Restart Timer</button>
-
-    <button type="button" id="button">Crop</button>
+    <!-- <button onclick="restart()">Restart Timer</button> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

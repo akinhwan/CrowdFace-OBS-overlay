@@ -13,6 +13,10 @@ body {
   display: none;
 }
 
+#image {
+  max-width: 27rem;
+}
+
 .image-wrapper {
   width: 100%;
   display: flex;
@@ -30,11 +34,11 @@ body {
 }
 
 .image-left {
-  background-image: url("../img/sample.png");
+  /* background-image: url("../img/sample.png"); */
 }
 
 .image-right {
-  background-image: url("../img/cyrus.jpg");
+  background-image: url("../img/blake.jpg");
 }
 
 .question {

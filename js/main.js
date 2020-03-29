@@ -1,6 +1,6 @@
 console.clear();
 
-var speed = 120;
+var speed = 1800;
 var indexPB = speed * 60; // 60 FPS
 var initialDash = 440;
 var currentDash = 600;

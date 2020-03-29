@@ -32,15 +32,12 @@
       Data:
       <span id="data">
         {"x":401,"y":347.6875,"width":90,"height":100,"rotate":0,"scaleX":1,"scaleY":1}
-        <!-- "x":395,"y":342.6875,"width":95,"height":114,"rotate":0,"scaleX":1,"scaleY":1 -->
-        <!-- {"x":401.0999999999999,"y":344.4,"width":87.80000000000018,"height":112.20000000000005,"rotate":0,"scaleX":1,"scaleY":1} -->
       </span>
     </p>
     <p>
       Crop Box Data:
       <span id="cropBoxData">
         {"left":543,"top":347.6875,"width":90,"height":100}
-        <!-- {"left":537,"top":342.6875,"width":95,"height":114} -->
       </span>
     </p>
 
@@ -62,8 +59,6 @@
         var image = document.querySelector("#image");
         var data = document.querySelector("#data");
         var cropBoxData = document.querySelector("#cropBoxData");
-        console.log(JSON.stringify(data));
-        console.log(JSON.stringify(cropBoxData));
         var button = document.getElementById("button");
         var result = document.getElementById("result");
         var cropper = new Cropper(image, {
@@ -95,7 +90,7 @@
           cropper.setCropBoxData(cropData);
           result.innerHTML = "";
           result.appendChild(cropper.getCroppedCanvas());
-        }, 300);
+        }, 1000);
       });
     </script>
   </body>
